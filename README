@@ -61,4 +61,15 @@ in this example it will resolve targethost.com through proxy(or chained proxies)
 specified by proxychains.conf
 
 NOTE: 
-to run suid/sgid programs(like ssh) through proxychains you have to be root
+- to run suid/sgid programs(like ssh) through proxychains you have to be root
+- this version has add localnet patch, so proxychains will direct to local net.
+For example:
+add localnet 192.168.0.1/255.255.255.0 to proxychains.conf
+
+- if you want to install the version, the error will be show like "getnameinfo",
+make sure you comment system netdb.h function `getnameinfo`, and uncomment this file
+after you compile proxychains3.1.
+
+- Another version:
+proxychains has been location SF site, Now ng version is on [github.com](https://github.com/liu1084/proxychains-ng), which has a patch for local network.
+

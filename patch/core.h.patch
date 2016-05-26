@@ -1,0 +1,15 @@
+--- old/core.h  2006-03-16 00:16:59.000000000 +0800
++++ new/core.h  2016-05-25 09:41:21.000000000 +0800
+@@ -54,6 +54,12 @@
+       int flags;
+ } thread_arg;
+
++typedef struct
++{
++  struct in_addr in_addr, netmask;
++} localaddr_arg;
++
++
+ int connect_proxy_chain (
+                int sock,
+                unsigned int target_ip,
